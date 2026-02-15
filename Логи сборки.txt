@@ -1,0 +1,22 @@
+1)  cmake -S . -B build_linux
+-- The C compiler identification is GNU 13.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- OS: Linux
+-- Configuring done (2.2s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/laptop/TestTask/build_linux
+2)cmake --build build_linux
+[ 50%] Building C object CMakeFiles/sqlite3.dir/sqlite3.c.o
+/home/laptop/TestTask/sqlite3.c: In function ‘sqlite3SelectNew’:
+/home/laptop/TestTask/sqlite3.c:124086:10: warning: function may return address of local variable [-Wreturn-local-addr]
+124086 |   return pNew;
+       |          ^~~~
+/home/laptop/TestTask/sqlite3.c:124046:10: note: declared here
+124046 |   Select standin;
+       |          ^~~~~~~
+[100%] Linking C shared library libsqlite3.so
+[100%] Built target sqlite3
