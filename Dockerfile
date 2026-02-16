@@ -1,10 +1,19 @@
-FROM alpine:latest
+FROM debian:stable-slim
 
-RUN apk add --no-cache cmake build-base
+RUN apt update && apt install -y --no-install-recommends \
+  gcc \
+  cmake \
+  libc6-dev \ 
+  cmake \ 
+  make \ 
+  && rm -rf  /var/lib/apt/lists/*
 
+ 
 WORKDIR /app
 COPY . .
 
 RUN cmake -B build && cmake --build build
+
+RUN ldd build/SQLite.so
 
 CMD ["ls", "-la", "build/"]
