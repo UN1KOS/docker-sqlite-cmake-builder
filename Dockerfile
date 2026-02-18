@@ -4,7 +4,6 @@ RUN apt update && apt install -y --no-install-recommends \
   gcc \
   cmake \
   libc6-dev \ 
-  cmake \ 
   make \ 
   && rm -rf  /var/lib/apt/lists/*
 
