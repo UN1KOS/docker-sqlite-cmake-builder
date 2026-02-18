@@ -13,6 +13,8 @@ docker create --name tmp-container sqlite-builder
 docker cp tmp-container:/app/build/SQLite.so ./SQLite.so
 docker rm tmp-container
 
+
+Гитхаб - https://github.com/UN1KOS/docker-sqlite-cmake-builder
 __________________________________________________________________________________________________
 ошибки при сборке CMake
 1) была ошибка "No CMAKE_CXX_COMPILER could be found":
